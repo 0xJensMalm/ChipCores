@@ -1,0 +1,6 @@
+#myCanvas {
+    display: block; /* Removes the bottom margin/gap */
+    margin: 0 auto; /* Center align the canvas */
+    background-color: rgb(20, 20, 20);
+  }
+  
