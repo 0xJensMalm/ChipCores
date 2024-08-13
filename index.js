@@ -167,6 +167,7 @@ new p5((sketch) => {
   sketch.draw = function () {
     drawComposition(sketch, sketch.width, sketch.height, u);
     drawSignature(sketch, sketch.width, sketch.height);
+    drawFrame(10); // Adjust thickness
   };
 
   function drawComposition(p, width, height, unit) {
@@ -278,6 +279,23 @@ new p5((sketch) => {
         seedHorizontalOffset,
       textY
     );
+  }
+
+  function drawFrame(thickness) {
+    sketch.push();
+    sketch.noFill();
+    sketch.stroke(0); // Black color for the frame
+    sketch.strokeWeight(thickness);
+
+    // Draw the frame as a rectangle slightly inset from the canvas edges
+    sketch.rect(
+      thickness / 2,
+      thickness / 2,
+      sketch.width - thickness,
+      sketch.height - thickness
+    );
+
+    sketch.pop();
   }
 
   sketch.keyPressed = function () {
